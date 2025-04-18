@@ -19,7 +19,6 @@ export default function Mission() {
 
   const navItems = [
     { href: "/our-work", label: "Our Work" },
-    { href: "/blog", label: "Blog" },
     { href: "/mission", label: "The Mission", active: true },
     { href: "/learn-more", label: "Learn More" },
   ]
@@ -50,7 +49,7 @@ export default function Mission() {
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/nairobi.jpg?height=400&width=600"
                 alt="Night sky over Kenyan landscape"
                 fill
                 className="object-cover"
@@ -61,7 +60,7 @@ export default function Mission() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
             <div className="order-2 md:order-1 relative h-80 rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/street-lighting.jpg?height=400&width=600"
                 alt="Light pollution in urban Kenya"
                 fill
                 className="object-cover"
@@ -96,7 +95,7 @@ export default function Mission() {
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/dark-sky-prac.jpeg?height=400&width=600"
                 alt="DarkSky Kenya community workshop"
                 fill
                 className="object-cover"

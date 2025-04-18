@@ -45,7 +45,6 @@ export default function Home() {
   // Define navigation items for the home page
   const navItems = [
     { href: "/our-work", label: "Our Work" },
-    { href: "/blog", label: "Blog" },
     { href: "/mission", label: "The Mission" },
     { href: "/learn-more", label: "Learn More" },
   ]

@@ -22,7 +22,6 @@ export default function OurWork() {
 
   const navItems = [
     { href: "/our-work", label: "Our Work", active: true },
-    { href: "/blog", label: "Blog" },
     { href: "/mission", label: "The Mission" },
     { href: "/learn-more", label: "Learn More" },
   ]

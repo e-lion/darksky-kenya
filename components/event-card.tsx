@@ -7,6 +7,7 @@ interface EventProps {
     date: string
     location: string
     description: string
+    registrationLink?: string
   }
 }
 
@@ -23,7 +24,12 @@ export default function EventCard({ event }: EventProps) {
         <span>{event.location}</span>
       </div>
       <p className="text-foreground mb-4">{event.description}</p>
-      <Link href="#" className="text-primary hover:text-primary/80 inline-flex items-center">
+      <Link 
+        href={event.registrationLink || "#"} 
+        className="text-primary hover:text-primary/80 inline-flex items-center"
+        target={event.registrationLink ? "_blank" : "_self"}
+        rel={event.registrationLink ? "noopener noreferrer" : ""}
+      >
         Register <ArrowRight className="ml-2 h-4 w-4" />
       </Link>
     </div>

@@ -6,6 +6,7 @@ import HeroSection from "@/components/hero-section"
 import SiteHeader from "@/components/site-header"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
+import { ArrowRight } from "lucide-react"
 
 // Import components directly for now to troubleshoot
 import ProjectCard from "@/components/project-card"
@@ -23,7 +24,7 @@ export default function OurWork() {
   const navItems = [
     { href: "/our-work", label: "Our Work", active: true },
     { href: "/mission", label: "The Mission" },
-    { href: "/learn-more", label: "Learn More" },
+    { href: "/events", label: "Upcoming Events" },
   ]
 
   return (
@@ -47,11 +48,21 @@ export default function OurWork() {
 
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Upcoming Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Upcoming Events</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {events.map((event, index) => (
               <EventCard key={index} event={event} />
             ))}
+          </div>
+          <div className="text-center">
+            <Link 
+              href="/events"
+              className="inline-flex items-center justify-center px-6 py-3 border border-primary rounded-md text-base font-medium text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+            >
+              View all events <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -126,41 +137,41 @@ const projects: Project[] = [
     title: "Nairobi Light Pollution Survey",
     description:
       "Comprehensive assessment of light pollution in Kenya's capital city, identifying hotspots and recommending mitigation strategies.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/ds-placeholder-1.png?height=300&width=400",
     category: "Research",
   },
   {
     title: "Maasai Mara Dark Sky Reserve",
     description:
       "Working with local communities and tourism operators to establish Kenya's first Dark Sky Reserve in the Maasai Mara region.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/ds-placeholder-2.png?height=300&width=400",
     category: "Conservation",
   },
   {
     title: "School Astronomy Program",
     description:
       "Educational initiative bringing astronomy to schools across Kenya, with a focus on rural areas with minimal light pollution.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/ds-placeholder-3.png?height=300&width=400",
     category: "Education",
   },
   {
     title: "Smart Lighting Guidelines",
     description:
       "Development of guidelines for municipalities and businesses to implement dark sky-friendly lighting solutions.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/ds-placeholder-4.png?height=300&width=400",
     category: "Policy",
   },
   {
     title: "Astro-Tourism Development",
     description:
       "Partnership with tourism stakeholders to develop and promote astro-tourism experiences in Kenya's dark sky areas.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/ds-placeholder-5.png?height=300&width=400",
     category: "Tourism",
   },
   {
     title: "Community Star Parties",
     description: "Regular stargazing events for communities across Kenya, fostering appreciation for the night sky.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/ds-placeholder-6.png?height=300&width=400",
     category: "Community",
   },
 ]
@@ -174,11 +185,12 @@ interface Event {
 
 const events: Event[] = [
   {
-    title: "Annual Dark Sky Festival",
-    date: "June 15-17, 2025",
-    location: "Amboseli National Park",
+    title: "International Dark Sky Week 2025 Webinar",
+    date: "April 21, 2025 - April 28, 2025",
+    location: "Oloshoibor, Kajiado West",
     description:
-      "A three-day celebration of Kenya's night skies featuring stargazing, workshops, and cultural performances.",
+      "Join us for an informative session discussing International Dark Sky Week 2025 (April 21-28) and the importance of protecting our night skies from light pollution. Learn about the upcoming Kenya Dark Sky Festival 2025, featuring rocket building, star gazing, fireside chats, and more in Oloshoibor, Kajiado West.",
+    registrationLink: "https://forms.office.com/r/ytLwBiiSNy",
   },
 ]
 

@@ -46,7 +46,7 @@ export default function Home() {
   const navItems = [
     { href: "/our-work", label: "Our Work" },
     { href: "/mission", label: "The Mission" },
-    { href: "/learn-more", label: "Learn More" },
+    { href: "/events", label: "Upcoming Events" },
   ]
 
   // Use intersection observer for lazy loading

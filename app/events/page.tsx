@@ -108,14 +108,6 @@ interface Event {
 
 const events: Event[] = [
   {
-    title: "International Dark Sky Week 2025 Webinar",
-    date: "April 4, 2025, 5:00 - 6:00 PM EAT",
-    location: "Virtual (Online)",
-    description:
-      "Join us for an informative session discussing International Dark Sky Week 2025 (April 21-28) and the importance of protecting our night skies from light pollution. Learn about the upcoming Kenya Dark Sky Festival 2025, featuring rocket building, star gazing, fireside chats, and more in Oloshoibor, Kajiado West.",
-    registrationLink: "https://forms.office.com/r/ytLwBiiSNy",
-  },
-  {
     title: "Kenya Dark Sky Festival 2025",
     date: "April 21-28, 2025",
     location: "Oloshoibor, Kajiado West",

@@ -42,21 +42,6 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Host Your Own Event</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Interested in hosting a dark sky event in your community? We can provide resources, speakers, and support to
-            help you create a successful stargazing or educational event.
-          </p>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-8 py-3 text-lg font-medium hover:bg-primary/90"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
 
       <footer className="py-12 border-t">
         <div className="container mx-auto px-4">

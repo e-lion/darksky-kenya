@@ -2,99 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.5rem;
+}
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 270 50% 60%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 270 50% 60%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 270 50% 60%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 240 30% 3%;
-    --foreground: 210 40% 98%;
-
-    --card: 240 30% 8%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 240 30% 3%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 270 50% 60%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 240 30% 10%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 240 30% 10%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 270 50% 60%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 240 30% 15%;
-    --input: 240 30% 15%;
-    --ring: 270 50% 60%;
-  }
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
-/* Theme transition effects */
-.theme-transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+/* Stars effects for backgrounds */
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
-/* Add these optimizations to improve rendering performance */
-.optimize-paint {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 500px; /* Approximate size to reduce layout shift */
+.stars-small,
+.stars-medium,
+.stars-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 100px 100px;
+  animation: twinkle 8s ease-in-out infinite;
 }
 
-/* Add will-change for elements that animate frequently */
-.will-change-opacity {
-  will-change: opacity;
+.stars-medium {
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.15) 3px, transparent 4px);
+  background-size: 200px 200px;
+  background-position: 50px 50px;
+  animation: twinkle 15s ease-in-out infinite;
 }
 
-.will-change-transform {
-  will-change: transform;
+.stars-large {
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.1) 4px, transparent 6px);
+  background-size: 300px 300px;
+  background-position: 100px 100px;
+  animation: twinkle 20s ease-in-out infinite;
+  animation-delay: 5s;
 }
 
+/* Custom category badges */
+.category-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+.category-badge-workshop {
+  @apply bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300;
+}
+
+.category-badge-stargazing {
+  @apply bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300;
+}
+
+.category-badge-educational {
+  @apply bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300;
+}
+
+.category-badge-exhibition {
+  @apply bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300;
+}
+
+.category-badge-community {
+  @apply bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300;
+}

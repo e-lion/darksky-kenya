@@ -7,7 +7,6 @@ import { useState, useEffect } from "react"
 
 // Define navigation items for the events section
 const navItems = [
-  { href: "/", label: "Home" },
   { href: "/our-work", label: "Our Work" },
   { href: "/mission", label: "The Mission" },
   { href: "/events", label: "Upcoming Events", active: true },

@@ -135,22 +135,30 @@ export async function getEvents(): Promise<{ upcoming: Event[], past: Event[] }>
     
     console.log(`Successfully fetched ${upcomingRecords.length} upcoming events and ${pastRecords.length} past events from Airtable`);
     
-    const mapRecord = (record: any, isPast: boolean): Event => ({
-      id: record.id,
-      title: record.get('Title') as string,
-      date: record.get('Date') as string,
-      time: record.get('Time') as string,
-      location: record.get('Location') as string,
-      description: record.get('Description') as string,
-      imageUrl: record.get('Image')?.[0]?.url || null,
-      registrationLink: record.get('RegistrationLink') as string || null,
-      category: record.get('Category') as string || undefined,
-      isPast
-    });
+    const mapRecord = (record: any, isPast: boolean): Event => {
+      // Try both field naming conventions for registration link
+      const registrationLink = record.get('Registration Link') || record.get('RegistrationLink');
+      
+      return {
+        id: record.id,
+        title: record.get('Title') as string,
+        date: record.get('Date') as string,
+        time: record.get('Time') as string,
+        location: record.get('Location') as string,
+        description: record.get('Description') as string,
+        imageUrl: record.get('Image')?.[0]?.url || null,
+        registrationLink: registrationLink as string || null,
+        category: record.get('Category') as string || undefined,
+        isPast
+      };
+    };
+    
+    const upcoming = upcomingRecords.map(record => mapRecord(record, false));
+    const past = pastRecords.map(record => mapRecord(record, true));
     
     return {
-      upcoming: upcomingRecords.map(record => mapRecord(record, false)),
-      past: pastRecords.map(record => mapRecord(record, true))
+      upcoming,
+      past
     };
   } catch (error) {
     console.error('Error fetching events from Airtable:', error);
@@ -182,6 +190,9 @@ export async function getEventById(id: string): Promise<Event | null> {
     
     console.log(`Successfully fetched event with ID ${id} from Airtable`);
     
+    // Try both field naming conventions for registration link
+    const registrationLink = record.get('Registration Link') || record.get('RegistrationLink');
+    
     return {
       id: record.id,
       title: record.get('Title') as string,
@@ -190,7 +201,7 @@ export async function getEventById(id: string): Promise<Event | null> {
       location: record.get('Location') as string,
       description: record.get('Description') as string,
       imageUrl: record.get('Image')?.[0]?.url || null,
-      registrationLink: record.get('RegistrationLink') as string || null,
+      registrationLink: registrationLink as string || null,
       category: record.get('Category') as string || undefined,
       isPast
     };

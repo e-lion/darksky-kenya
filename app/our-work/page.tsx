@@ -195,13 +195,17 @@ const events: Event[] = [
 ]
 
 const partners = [
-  { name: "Kenya Wildlife Service", initial: "KWS" },
-  { name: "Ministry of Tourism", initial: "MT" },
-  { name: "University of Nairobi", initial: "UoN" },
-  { name: "Kenya Astronomical Society", initial: "KAS" },
-  { name: "National Museums of Kenya", initial: "NMK" },
-  { name: "Kenya Tourism Board", initial: "KTB" },
-  { name: "International Dark-Sky Association", initial: "IDA" },
-  { name: "African Astronomical Society", initial: "AAS" },
+  // { name: "Kenya Wildlife Service", initial: "KWS" },
+  // { name: "Ministry of Tourism", initial: "MT" },
+  // { name: "University of Nairobi", initial: "UoN" },
+  // { name: "Kenya Astronomical Society", initial: "KAS" },
+  // { name: "National Museums of Kenya", initial: "NMK" },
+  // { name: "Kenya Tourism Board", initial: "KTB" },
+  // { name: "DarkSky International", initial: "IDA" },
+  // { name: "African Astronomical Society", initial: "AAS" },
+  { name: "DarkSky International", initial: "DarkSky" },
+  { name: "Kenya Wildlife Conservancies Association", initial: "KCWA" },
+  { name: "Travelling Telescope", initial: "TT" },
+  { name: "Space Society Kenya", initial: "SSK" },
 ]
 

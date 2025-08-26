@@ -136,21 +136,21 @@ const projects: Project[] = [
   {
     title: "Nairobi Light Pollution Survey",
     description:
-      "Comprehensive assessment of light pollution in Kenya's capital city, identifying hotspots and recommending mitigation strategies.",
+      "We plan to conduct a comprehensive assessment of light pollution in Kenya's capital city, identifying hotspots and recommending mitigation strategies.",
     image: "/images/ds-placeholder-1.png?height=300&width=400",
     category: "Research",
   },
   {
-    title: "Maasai Mara Dark Sky Reserve",
+    title: "Dark Sky Places",
     description:
-      "Working with local communities and tourism operators to establish Kenya's first Dark Sky Reserve in the Maasai Mara region.",
+      "Working with conservancies to establish Kenya's first Dark Sky Places.",
     image: "/images/ds-placeholder-2.png?height=300&width=400",
     category: "Conservation",
   },
   {
-    title: "School Astronomy Program",
+    title: "School Outreach Program",
     description:
-      "Educational initiative bringing astronomy to schools across Kenya, with a focus on rural areas with minimal light pollution.",
+      "Educational initiative bringing dark sky awareness to schools across Kenya, with a focus on rural areas with minimal light pollution.",
     image: "/images/ds-placeholder-3.png?height=300&width=400",
     category: "Education",
   },
@@ -170,7 +170,7 @@ const projects: Project[] = [
   },
   {
     title: "Community Star Parties",
-    description: "Regular stargazing events for communities across Kenya, fostering appreciation for the night sky.",
+    description: "We envision hosting regular stargazing events for communities across Kenya, fostering appreciation for the night sky.",
     image: "/images/ds-placeholder-6.png?height=300&width=400",
     category: "Community",
   },

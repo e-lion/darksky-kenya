@@ -143,7 +143,7 @@ const projects: Project[] = [
   {
     title: "Dark Sky Places",
     description:
-      "Working with conservancies to establish Kenya's first Dark Sky Places.",
+      "Working with conservancies to establish Kenya's first certified Dark Sky Places.",
     image: "/images/ds-placeholder-2.png?height=300&width=400",
     category: "Conservation",
   },

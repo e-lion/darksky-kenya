@@ -133,7 +133,13 @@ export default function Home() {
             Help us protect Kenya's night skies for future generations. Join our community of stargazers,
             conservationists, and dark sky enthusiasts.
           </p>
-          <Button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-6 rounded-md text-lg">Join us</Button>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdwPSREM6CtcNscPNUd2psCJiavlRrmxyJcuaX-vcbYSXXixQ/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-purple-700 hover:bg-purple-800 text-white px-8 py-6 rounded-md text-lg">Join us</Button>
+          </a>
         </div>
       </section>
 
